@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="">
+        <input id="textbox" type="text" pattern=".+@.+\..+">
+        <input id="b1" type="button" value="button">
+        <p id="label"></p>
+    </form>
+    
+    <script>
+        b1.addEventListener('click', submit)
+
+        
+        function submit() {
+            
+            if(textbox.validity.patternMismatch){
+                var text = document.getElementById('textbox');
+                text.style.border = "2px solid rgba(255, 0, 0)";
+                
+                var label = document.getElementById('label');
+                label.innerHTML = "error";
+                
+            }else{
+                var text = document.getElementById('textbox');
+                text.style.border = "1px solid rgba(0, 0, 0)";
+                
+                var label = document.getElementById('label');
+                label.innerHTML = "ok";
+            }
+            
+        }
+        
+    </script>
+    
+</body>
+</html>
